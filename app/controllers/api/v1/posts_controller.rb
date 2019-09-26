@@ -1,10 +1,11 @@
 module Api
   module V1
     class PostsController < ApplicationController
+      protect_from_forgery
       before_action :set_post, only: [:show, :update, :destroy]
 
       def index
-        posts = Post.order(created_at :desc)
+        posts = Post.all
         render json: { status: 'SUCCESS', message: 'Loaded posts', data: posts }
       end
 
