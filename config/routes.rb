@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :posts
-      resources :comments
+      resources :comments, only: [:show]
     end
 	end
   namespace :api, {format: 'json'} do
     namespace :v1 do
       resources :searches, only: [:index]
     end
-  end
+	end
+	resources :comments, only: [:index]
 end
