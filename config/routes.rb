@@ -7,4 +7,9 @@ Rails.application.routes.draw do
       resources :comments
     end
 	end
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :searches, only: [:index]
+    end
+  end
 end
