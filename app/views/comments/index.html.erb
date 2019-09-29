@@ -1,24 +1,2 @@
-<div class="container js-commentsIndex">
-  <div class="row">
-    <% @comments.each do |comment| %>
-      <div class="col s4 m6">
-        <div class="card">
-          <span class="card-title{'v-on:click': "setBookInfo(#{book.id})"}">
-            <%= comment.body %>
-          </span>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="row{'v-show': 'commentInfoBool'}">
-    <div class="col s12 m12">
-      <div class="card-content white-text">
-        <span class="card-title">
-          {{ commentInfo.body }}
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= javascript_pack_tag 'comments/index' %>
+<%= javascript_pack_tag 'hello_vue' %>
+<%= stylesheet_pack_tag 'hello_vue' %>
