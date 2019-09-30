@@ -1,6 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  protect_from_forgery
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_comment, only: [:show]
 
   # def index
   #   comments = Comment.all
@@ -8,7 +7,7 @@ class Api::V1::CommentsController < ApplicationController
   # end
 
   def show
-    render json: { status: 'SUCCESS', message: 'Loaded the comment', data: @comment }
+    render 'show', formats: 'json', handlers: 'jbuilder'
   end
 
   # def create
@@ -38,7 +37,7 @@ class Api::V1::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def comment_params
-    params.require(:comment).permit(:body)
-  end
+  # def comment_params
+  #   params.require(:comment).permit(:body)
+  # end
 end

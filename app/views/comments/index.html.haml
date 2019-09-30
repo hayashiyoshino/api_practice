@@ -1,0 +1,16 @@
+.container.js-commentsIndex
+  .row
+    .card.pink.lighten-5
+      選択したコメント：
+      %span.card-title{'v-if': 'commentInfoBool'}
+        {{ commentInfo.body }}
+
+  .row
+    - @comments.each do |comment|
+      .card
+        %span.card-title{'v-on:click': "commentShow(#{comment.id})"}
+          = comment.body
+
+
+
+= javascript_pack_tag 'comments/index'

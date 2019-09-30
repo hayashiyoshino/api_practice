@@ -1,7 +1,7 @@
 .container.js-booksIndex
   .row
     - @books.each do |book|
-      .col.s4.m6
+      .col.m6
         .card
           %span.card-title{'v-on:click': "setBookInfo(#{book.id})"}
             = book.title
