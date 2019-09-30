@@ -1,9 +1,13 @@
-<div id="app">
-  <navbar></navbar>
-  <div class="container">
-    <router-view></router-view>
-  </div>
+<div id="unit-conversion" class="container">
+  <p>
+    <input type="text" v-model:value="km" style="width:80%;">km
+  </p>
+  <p>
+    <input type="text" v-model:value="m" style="width:80%;">m
+  </p>
+  <p>
+    <input type="text" v-model:value="mm" style="width:80%;">mm
+  </p>
 </div>
 
-<%= javascript_pack_tag 'gurume' %>
-<%= stylesheet_pack_tag 'gurume' %>
+<%= javascript_pack_tag 'homes/index' %>
