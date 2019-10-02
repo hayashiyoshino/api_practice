@@ -26,3 +26,18 @@ new Vue({
     }
   }
 })
+
+new Vue({
+  el: '#rakuten-api',
+  data: {
+    keyword: ''
+  },
+  watch: {
+    keyword: function(value) {
+      axios.get(`api/v1/searches`)
+      .then(res => {
+        this.itemInfo = res.data;
+      })
+    },
+  }
+})
