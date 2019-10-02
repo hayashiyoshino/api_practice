@@ -1,0 +1,3 @@
+[submodule "hexo-amazon-jp-link"]
+	path = hexo-amazon-jp-link
+	url = https://github.com/morizyun/hexo-amazon-jp-link.git
