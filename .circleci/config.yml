@@ -13,9 +13,9 @@ jobs:
       - image: circleci/postgres:latest
         environment:
           POSTGRES_USER: root
-          POSTGRES_DB: circle-test_test
+          POSTGRES_DB: circle-api-practice
 
-    working_directory: ~/repo
+    working_directory: ~/myapp
 
     steps:
       - checkout
