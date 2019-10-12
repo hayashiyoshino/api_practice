@@ -1,23 +1,27 @@
 inherit_from: .rubocop_todo.yml
 
 require:
-  -rubocop-rails
+  - rubocop-rails
 
 AllCops:
   TargetRubyVersion: 2.6
   Exclude:
+   - app/channels/**/*
    - node_modules/**/*
    - bin/*
    - test/**/*
    - spec/**/*
    - lib/*
-   - db/migrate/*
-   - db/schema.rb
+   - db/**/*
    - lib/tasks/*
    - public/*
    - tmp/*
    - vendor/**/*
    - config/spring.rb
+   - config/application.rb
+   - config/environments/*
+   - config/puma.rb
+
 
 Style/Documentation:
  Description: 'Document classes and non-namespace modules.'
