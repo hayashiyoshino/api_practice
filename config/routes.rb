@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
 	namespace :api do
 	  resources :books, only: [:show]
-	end
+  end
+  
+  get 'api-docs', to: 'api_docs#index'
 end
