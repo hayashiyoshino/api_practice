@@ -1,4 +1,37 @@
 class Api::V1::CommentsController < ApplicationController
+  include Swagger::Blocks
+
+  swagger_path '/comments/{id}' do
+    operation :get do
+      key :description, 'Find a comment by ID'
+      key :operationID, :find_user_by_id
+
+      parametr name: :id do
+        key :in, :path
+        key :description, 'Comment ID'
+        key :required, true
+        key :type, :integer
+        key :format, :int64
+      end
+
+      response 200 do
+        key :description, 'Comment'
+        schema do
+          key :required, [:id, :body]
+          property :id do
+            key :type, :integer
+            key :format, :int64
+          end
+          property :body do
+            key :type, :string
+          end
+        end
+      end
+
+    end
+
+  end
+
   before_action :set_comment, only: [:show]
 
   # def index
